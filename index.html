@@ -1,0 +1,76 @@
+<!DOCTYPE html><html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+        }
+        .container h2 {
+            color: #1877f2;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #1877f2;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #165dbb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>تسجيل الدخول</h2>
+        <form id="dataForm">
+            <input type="text" id="name" name="name" placeholder="الاسم" required>
+            <input type="email" id="email" name="email" placeholder="البريد الإلكتروني" required>
+            <button type="submit">إرسال</button>
+        </form>
+    </div><script>
+    document.getElementById("dataForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+
+        // تخزين البيانات في LocalStorage
+        localStorage.setItem("name", name);
+        localStorage.setItem("email", email);
+
+        // الانتقال إلى الموقع الثاني لعرض البيانات
+        window.location.href = "https://example2.com/receive.html";
+    });
+</script>
+
+</body>
+</html>
